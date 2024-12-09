@@ -1,25 +1,25 @@
 #!/bin/bash
 
-curl -s https://raw.githubusercontent.com/stephenahmeed/logo/main/logo.sh | bash
-sleep 5
+# Colors for output
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
 
-BOLD=$(tput bold)
-NORMAL=$(tput sgr0)
-PINK='\033[1;35m'
-
-
-show() {
-    case $2 in
-        "error")
-            echo -e "${PINK}${BOLD}❌ $1${NORMAL}"
-            ;;
-        "progress")
-            echo -e "${PINK}${BOLD}⏳ $1${NORMAL}"
-            ;;
-        *)
-            echo -e "${PINK}${BOLD}✅ $1${NORMAL}"
-            ;;
-    esac
+# Function to display banner
+print_banner() {
+    clear
+    echo -e "${CYAN}"
+    echo '█▀▀ █▀▀█ █▀▀▄ █▀▀▄ ░▀░ █▀▀█   █░░█ █▀▀█ █▀▀ █▀▀ █▀▀█ ░▀░ █▀▀▄'
+    echo '▀▀█ █▄▄█ █▀▀▄ █▀▀▄ ▀█▀ █▄▄▀   █▀▀█ █░░█ ▀▀█ ▀▀█ █▄▄█ ▀█▀ █░░█'
+    echo '▀▀▀ ▀░░▀ ▀▀▀░ ▀▀▀░ ▀▀▀ ▀░▀▀   ▀░░▀ ▀▀▀▀ ▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀ ▀░░▀'
+    echo -e "${NC}"
+    echo -e "${GREEN}================================================${NC}"
+    echo -e "         Sabbir Hossain | Airdrop"
+    echo -e "${YELLOW}        TG:https://t.me/sabbirofficialairdrop${NC}"
+    echo -e "${GREEN}================================================${NC}"
+    echo ""
 }
 
 SERVICE_NAME="nexus"
