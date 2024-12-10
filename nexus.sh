@@ -26,7 +26,7 @@ SERVICE_NAME="nexus"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
 show "Installing Rust..." "progress"
-if ! source <(wget -O - https://raw.githubusercontent.com/stephenahmeed/installation/main/rust.sh); then
+if ! source <(wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh); then
     show "Failed to install Rust." "error"
     exit 1
 fi
@@ -63,10 +63,7 @@ fi
 cd $HOME/network-api/clients/cli
 
 show "Installing required dependencies..." "progress"
-if ! sudo apt install pkg-config libssl-dev protobuf-compiler -y; then
-    show "Failed to install dependencies." "error"
-    exit 1
-fi
+sudo apt update && sudo apt upgrade && sudo apt install build-essential pkg-config libssl-dev protobuf-compiler -y
 
 if systemctl is-active --quiet nexus.service; then
     show "nexus.service is currently running. Stopping and disabling it..."
