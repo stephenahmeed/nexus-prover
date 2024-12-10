@@ -34,3 +34,5 @@ journalctl -u nexus.service -f -n 50
 - You will see something like this, it means, it is fine
 
 ![Screenshot 2024-10-09 115039](https://github.com/user-attachments/assets/3d3065d8-cb88-44ca-88b8-ac072bcf9eff)
+
+Credit : ZunXBT
