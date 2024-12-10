@@ -15,11 +15,11 @@ sudo systemctl start nexus.service
 ## Installation
 - You can use either this command
 ```bash
-curl -sSL https://raw.githubusercontent.com/zunxbt/nexus-prover/main/nexus.sh | bash
+curl -sSL https://raw.githubusercontent.com/stephenahmeed/nexus-prover/main/nexus.sh | bash
 ```
 - Or this command to run this script
 ```bash
-wget -qO - https://raw.githubusercontent.com/zunxbt/nexus-prover/main/nexus.sh | bash
+wget -qO - https://raw.githubusercontent.com/stephenahmeed/nexus-prover/main/nexus.sh | bash
 ```
 
 ## Status
