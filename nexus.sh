@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -s https://raw.githubusercontent.com/zunxbt/logo/main/logo.sh | bash
+curl -s https://raw.githubusercontent.com/stephenahmeed/logo/main/logo.sh | bash
 sleep 5
 
 BOLD=$(tput bold)
@@ -26,7 +26,7 @@ SERVICE_NAME="nexus"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
 show "Installing Rust..." "progress"
-if ! source <(wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh); then
+if ! source <(wget -O - https://raw.githubusercontent.com/stephenahmeed/installation/main/rust.sh); then
     show "Failed to install Rust." "error"
     exit 1
 fi
