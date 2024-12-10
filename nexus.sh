@@ -1,32 +1,32 @@
 #!/bin/bash
 
-# Colors for output
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-YELLOW='\033[1;33m'
-CYAN='\033[0;36m'
+curl -s https://raw.githubusercontent.com/zunxbt/logo/main/logo.sh | bash
+sleep 5
 
-# Function to display banner
-print_banner() {
-    clear
-    echo -e "${CYAN}"
-    echo '█▀▀ █▀▀█ █▀▀▄ █▀▀▄ ░▀░ █▀▀█   █░░█ █▀▀█ █▀▀ █▀▀ █▀▀█ ░▀░ █▀▀▄'
-    echo '▀▀█ █▄▄█ █▀▀▄ █▀▀▄ ▀█▀ █▄▄▀   █▀▀█ █░░█ ▀▀█ ▀▀█ █▄▄█ ▀█▀ █░░█'
-    echo '▀▀▀ ▀░░▀ ▀▀▀░ ▀▀▀░ ▀▀▀ ▀░▀▀   ▀░░▀ ▀▀▀▀ ▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀ ▀░░▀'
-    echo -e "${NC}"
-    echo -e "${GREEN}================================================${NC}"
-    echo -e "         Sabbir Hossain | Airdrop"
-    echo -e "${YELLOW}        TG:https://t.me/sabbirofficialairdrop${NC}"
-    echo -e "${GREEN}================================================${NC}"
-    echo ""
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+PINK='\033[1;35m'
+
+
+show() {
+    case $2 in
+        "error")
+            echo -e "${PINK}${BOLD}❌ $1${NORMAL}"
+            ;;
+        "progress")
+            echo -e "${PINK}${BOLD}⏳ $1${NORMAL}"
+            ;;
+        *)
+            echo -e "${PINK}${BOLD}✅ $1${NORMAL}"
+            ;;
+    esac
 }
 
 SERVICE_NAME="nexus"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
 show "Installing Rust..." "progress"
-if ! source <(wget -O - https://raw.githubusercontent.com/stephenahmeed/installation/main/rust.sh); then
+if ! source <(wget -O - https://raw.githubusercontent.com/zunxbt/installation/main/rust.sh); then
     show "Failed to install Rust." "error"
     exit 1
 fi

@@ -1,40 +1,36 @@
-## Run Nexus Prover Beta (Early Access)
+<h2 align=center>Run Nexus Prover Beta</h2>
 
-**Ready to contribute to the Nexus Network?** 
+## Info
+- You need to have min 4 RAM in your system (VPS)
+- Recommended : 6 GB RAM
+- You can buy VPS from [PQ Hosting](https://pq.hosting/?from=622403&lang=en) using cryptocurrency
+---
+This script is compatible with Ubuntu on local system as well as on VPS
+- If you run on VPS, u don't need to do anything after running the installation commands
+- If you run on Local system (Ubuntu), u just need to open the terminal after turning on your system to start this prover, it will start running automatically again, if it is not running then use this command to run
+```bash
+sudo systemctl start nexus.service
+```
 
-This guide helps you install and run the Nexus Prover Beta on your Ubuntu system (local or VPS).
+## Installation
+- You can use either this command
+```bash
+curl -sSL https://raw.githubusercontent.com/zunxbt/nexus-prover/main/nexus.sh | bash
+```
+- Or this command to run this script
+```bash
+wget -qO - https://raw.githubusercontent.com/zunxbt/nexus-prover/main/nexus.sh | bash
+```
 
-**Minimum Requirements:**
+## Status
+- You can check prover status using this command
+```bash
+systemctl status nexus.service
+```
+- To check logs, use the below command
+```bash
+journalctl -u nexus.service -f -n 50
+```
+- You will see something like this, it means, it is fine
 
-* 4 GB RAM (recommended: 6 GB)
-
-**Installation:**
-
-1. Open your terminal.
-2. Run one of these commands (choose either `curl` or `wget`):
-
-   ```bash
-   curl -sSL https://raw.githubusercontent.com/stephenahmeed/nexus-prover/main/nexus.sh | bash
-   ```
-
-   or
-
-   ```bash
-   wget -qO - https://raw.githubusercontent.com/stephenahmeed/nexus-prover/main/nexus.sh | bash
-   ```
-
-**Running the Prover:**
-
-* **VPS:** No further action needed.
-* **Local System:** The prover starts automatically on system boot. 
-   * To manually start: `sudo systemctl start nexus.service`
-
-**Checking Status:**
-
-* `systemctl status nexus.service` (shows running/stopped status)
-
-**Viewing Logs:**
-
-* `journalctl -u nexus.service -f -n 50` (shows detailed logs)
-
-**Let's contribute to the Nexus Network!**
+![Screenshot 2024-10-09 115039](https://github.com/user-attachments/assets/3d3065d8-cb88-44ca-88b8-ac072bcf9eff)
