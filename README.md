@@ -49,4 +49,4 @@ sed -i 's/.*/YOUR_PROVER_ID/' .nexus/prover-id
 
 ![image](https://github.com/user-attachments/assets/9f0eba4d-d218-4dc6-b396-b1aab84bc0cb)
 
-Credit : Zun
+# Credit : Zun
